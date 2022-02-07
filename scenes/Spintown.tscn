@@ -1,3 +1,27 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Spintown" type="Spatial"]
+[ext_resource path="res://assets/Model/characterMedium.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scenes/Camera.gd" type="Script" id=2]
+[ext_resource path="res://scenes/MeshInstance.gd" type="Script" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, 0.38172, 2 )
+fov = 80.0
+far = 111.6
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.941649, -0.000201464 )
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = null
+script = ExtResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
+visible = false
+mesh = ExtResource( 1 )
+software_skinning_transform_normals = false
+material/0 = null
